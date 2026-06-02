@@ -57,7 +57,7 @@
 4. Which product categories receive the most 5-star reviews?
 5. Which product categories receive the most 1-star reviews?
 
-**Order Item & Pricing Analysis**
+**ORDER ITEM & PRICING ANALYSIS**
 
 1. What is the total product revenue generated?
 2. What is the total freight revenue collected?
@@ -65,13 +65,13 @@
 4. Which product categories have the highest average selling price?
 5. Which product categories have the highest freight costs?
 
-**Order Composition Analysis**
+**ORDER COMPOSITION ANALYSIS**
 
 1. What is the average number of items per order?
 2. How many orders contain multiple items?
 3. What percentage of orders contain multiple products?
 
- **Seller-Product Relationship Analysis**
+ **SELLER-PRODUCT RELATIONSHIP ANALYSIS**
 
 1. Which sellers offer the largest number of products?
 2. Which product categories have the most active sellers?
