@@ -8,6 +8,7 @@
 4. How has monthly revenue changed over time?
 5. Which months has generated the highest revenue?
 6. Which cities contribute the most revenue?
+7. What is the month-over-month revenue growth rate?
 
 **CUSTOMER ANALYSIS**
 
@@ -16,6 +17,7 @@
 3. What is the repeat purchase rate?
 4. How many customers placed more than one order?
 5. Which customers generate the highest lifetime value?
+6. What is the average time between customer purchases?
 
 **PRODUCT ANALYSIS**
 
@@ -56,6 +58,7 @@
 3. Does delivery delay impact review ratings?
 4. Which product categories receive the most 5-star reviews?
 5. Which product categories receive the most 1-star reviews?
+6. Do expensive orders receive better ratings?
 
 **ORDER ITEM & PRICING ANALYSIS**
 
@@ -76,3 +79,4 @@
 1. Which sellers offer the largest number of products?
 2. Which product categories have the most active sellers?
 3. Which seller-category combinations generate the highest revenue?
+4. Which sellers dominate specific product categories?
