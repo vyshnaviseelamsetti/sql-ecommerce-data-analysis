@@ -87,7 +87,7 @@ GROUP BY product_category_name
 ORDER BY Number_of_Products DESC;
 
 
--- product categories contains more products
+-- product categories that contains more products
 SELECT product_category_name AS Product_Categories,
 COUNT(product_id) AS Number_of_Products
 FROM products
