@@ -69,13 +69,13 @@ MIN(order_purchase_timestamp) AS Earliest_Order
 FROM orders;
 
 
--- unique products
-SELECT COUNT(product_id) AS Total_Products
+-- unique products count
+SELECT COUNT(DISTINCT product_id) AS Total_Products
 FROM products;
 
 
--- unique product categories
-SELECT COUNT(product_category_name) AS Total_Product_Categories
+-- unique product categories count
+SELECT COUNT(DISTINCT product_category_name) AS Total_Product_Categories
 FROM products;
 
 
@@ -87,12 +87,43 @@ GROUP BY product_category_name
 ORDER BY Number_of_Products DESC;
 
 
--- product categories that contains more products
+-- product categories contains most products
+SELECT product_category_name AS Product_Categories,
+COUNT(product_id) AS Number_of_Products
+FROM products
+GROUP BY product_category_name
+ORDER BY Number_of_Products DESC;
+
+
+-- product category contains fewest products
 SELECT product_category_name AS Product_Categories,
 COUNT(product_id) AS Number_of_Products
 FROM products
 GROUP BY product_category_name
 ORDER BY Number_of_Products;
+
+
+-- unique sellers count
+SELECT COUNT(DISTINCT seller_id) AS Total_Sellers
+FROM sellers;
+
+
+-- unique seller cities count
+SELECT COUNT(DISTINCT seller_city) AS Total_Seller_Cities
+FROM sellers;
+
+
+-- unique seller states count
+SELECT COUNT(DISTINCT seller_state) AS Total_Seller_States
+FROM sellers;
+
+
+-- states with more sellers
+SELECT seller_state, COUNT(seller_id) AS Seller_Count
+FROM sellers
+GROUP BY seller_state
+ORDER BY Seller_Count DESC;
+
 
 
 
