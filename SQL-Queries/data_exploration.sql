@@ -125,8 +125,35 @@ GROUP BY seller_state
 ORDER BY Seller_Count DESC;
 
 
+-- available payment types
+SELECT DISTINCT payment_type AS Payment_Types
+FROM payments;
 
 
+-- transaction count of each payment type
+SELECT payment_type AS Payment_Type, COUNT(payment_type) AS Count_of_Payment_Type
+FROM payments
+GROUP BY payment_type;
 
 
+-- minimum payment value
+SELECT MIN(payment_value) AS Minimum_Payment_Value, payment_type
+FROM payments
+GROUP BY payment_type;
 
+
+-- maximum payment value
+SELECT MAX(payment_value) AS Maximum_Payment_Value, payment_type
+FROM payments
+GROUP BY payment_type;
+
+
+-- average payment value
+SELECT AVG(payment_value) AS Average_Payment_Value, payment_type
+FROM payments
+GROUP BY payment_type;
+
+
+-- count of order items
+SELECT COUNT(order_item_id) 
+FROM order_items;
