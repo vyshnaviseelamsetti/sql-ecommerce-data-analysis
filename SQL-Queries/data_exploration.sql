@@ -154,6 +154,89 @@ FROM payments
 GROUP BY payment_type;
 
 
--- count of order items
-SELECT COUNT(order_item_id) 
+-- total number of order items
+SELECT COUNT(*) AS Total_Orders
 FROM order_items;
+
+
+-- total unique products sold
+SELECT COUNT(DISTINCT product_id) AS Unique_Products
+FROM order_items;
+
+
+-- total unique sellers sold products
+SELECT COUNT(DISTINCT seller_id) AS Unique_Sellers
+FROM order_items;
+
+
+-- minimum product price
+SELECT MIN(price) AS Minimum_Product_Price
+FROM order_items;
+
+
+-- maximum product price
+SELECT MAX(price) AS Maximum_Product_Price
+FROM order_items;
+
+
+-- average product price
+SELECT AVG(price) AS Average_Product_Price
+FROM order_items;
+
+
+-- minimum freight value
+SELECT MIN(freight_value) AS Minimum_Freight_Value 
+FROM order_items;
+
+
+-- maximum freight value
+SELECT MAX(freight_value) AS Maximum_Freight_Value 
+FROM order_items;
+
+
+-- average freight value
+SELECT AVG(freight_value) AS Average_Freight_Value 
+FROM order_items;
+
+
+-- count of orders each customer have
+SELECT c.customer_id, COUNT(o.order_id) AS Total_Orders 
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id
+ORDER BY Total_Orders DESC;
+
+
+-- count of product each seller have
+SELECT seller_id, COUNT(DISTINCT product_id) AS Total_Products
+FROM order_items
+GROUP BY seller_id
+ORDER BY Total_Products DESC;
+
+
+-- count of items each order contain
+SELECT order_id, COUNT(DISTINCT order_item_id) AS Total_Items
+FROM order_items
+GROUP BY order_id
+ORDER BY Total_Items DESC;
+
+
+-- orders contain highest number of items
+SELECT order_id, COUNT(DISTINCT order_item_id) AS Total_Items
+FROM order_items
+GROUP BY order_id
+ORDER BY Total_Items DESC
+LIMIT 5;
+
+
+
+
+
+
+
+
+
+
+
+
